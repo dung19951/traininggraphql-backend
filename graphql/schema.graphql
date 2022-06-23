@@ -24,6 +24,12 @@ type Mutation {
 
     createPostResolver(title: String!, body: String!, user_id: ID!): Post
         @field(resolver: "App\\Graphql\\Mutations\\CreatePostResolver@__invoke")
+    updatePostResolver(
+        id: ID!
+        title: String!
+        body: String!
+    ): Post
+        @field(resolver: "App\\Graphql\\Mutations\\UpdatePostResolver@__invoke")
 }
 type User {
     id: ID!
